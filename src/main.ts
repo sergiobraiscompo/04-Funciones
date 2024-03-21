@@ -1,4 +1,5 @@
-let turno = 0;
+let turno: number = 0;
+const turno_personalizado_element: HTMLInputElement = document.getElementById("turno_personalizado_element").value;
 
 
 // Función mostrar número
@@ -25,6 +26,7 @@ const handle_click = (boton: string) => {
                     break;
             }
         }
+
         case "anterior": {
             if (turno === 0) {
                 console.log("El turno no puede ser menor que 0.");
@@ -33,6 +35,11 @@ const handle_click = (boton: string) => {
                 break;
             }
         }
+
+        case "personalizado": {
+            turno = turno_input;
+        }
+
         case "reset": {
                 turno = 0, mostrar_numero;
                 break;
@@ -48,6 +55,13 @@ boton_anterior?.addEventListener("click", () => handle_click("anterior"));
 // Botón número siguiente
 const boton_siguiente = document.getElementById("siguiente");
 boton_siguiente?.addEventListener("click", () => handle_click("siguiente"));
+
+// Recibe número personalizado
+const turno_input: number = turno_personalizado_element?.value;
+
+// Botón personalizado
+const boton_personalizado = document.getElementById("personalizado");
+boton_personalizado?.addEventListener("click", () => handle_click("personalizado", turno_input));
 
 // Botón reset
 const boton_reset = document.getElementById("reset");
