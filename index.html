@@ -14,13 +14,21 @@
       <p class="texto-turno">Por favor, acérquese al mostrador</p>
     </div>
     
-    <button id="anterior" class="button">Turno anterior</button>
-    <button id="reset" class="button">Resetear contador</button>
-    <button id="siguiente" class="button">Turno siguiente</button>
+    <!-- Botonera -->
+    <div id="contenedor-botones">
+      <!-- Acciones simples -->
+      <button id="anterior" class="boton">Turno anterior</button>
+      <button id="reset" class="boton">Resetear contador</button>
+      <button id="siguiente" class="boton">Turno siguiente</button>
 
-    <label for="turno_personalizado_element">Turno personalizado</label><br>
-    <input type="number" id="turno_personalizado_element" name="turno_personalizado_element"><br>
-    <button type=sumbit class="button">Turno personalizado</button>
+      <!-- Botón personalizado -->
+      <div id="contenedor-turno-personalizado">
+        <h2>Turno personalizado</h2><br>
+        <input type="text" id="turno_personalizado_element" name="turno_personalizado_element"><br>
+        <button type=sumbit id="personalizado" class="boton">Muestra turno</button>
+      </div>
+      
+    </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

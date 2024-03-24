@@ -1,13 +1,11 @@
 let turno: number = 0;
-const turno_personalizado_element: HTMLInputElement = document.getElementById("turno_personalizado_element").value;
-
 
 // Función mostrar número
 const mostrar_numero = () => {
     const numero_turno_element = document.getElementById("numero_turno_element");
     
     if (numero_turno_element) {
-            numero_turno_element.innerHTML = turno.toString().padStart(2, '0');
+        numero_turno_element.innerHTML = turno.toString().padStart(2, '0');
     } 
 };
 
@@ -37,14 +35,23 @@ const handle_click = (boton: string) => {
         }
 
         case "personalizado": {
-            turno = turno_input;
+            const turno_personalizado: number = parseInt(turno_input?.value);
+            
+            if (turno_personalizado >= 0 && turno_personalizado <= 99) {
+                turno = turno_personalizado;
+                break;
+            } else {
+                console.log("Número de turno no válido. Introduce un número entre 0 y 99 ambos inclusive.")
+                break;
+            }
         }
 
         case "reset": {
                 turno = 0, mostrar_numero;
                 break;
-            }
         }
+    }
+
     mostrar_numero();
 };
 
@@ -57,11 +64,11 @@ const boton_siguiente = document.getElementById("siguiente");
 boton_siguiente?.addEventListener("click", () => handle_click("siguiente"));
 
 // Recibe número personalizado
-const turno_input: number = turno_personalizado_element?.value;
+const turno_input = document.getElementById("turno_personalizado_element") as HTMLInputElement;
 
 // Botón personalizado
 const boton_personalizado = document.getElementById("personalizado");
-boton_personalizado?.addEventListener("click", () => handle_click("personalizado", turno_input));
+boton_personalizado?.addEventListener("click", () => handle_click("personalizado"));
 
 // Botón reset
 const boton_reset = document.getElementById("reset");
