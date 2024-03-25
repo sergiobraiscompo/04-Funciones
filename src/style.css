@@ -1,3 +1,12 @@
+:root {
+.sofia-sans condensed-text-font {
+  font-family: "Sofia Sans Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  }
+}
+
 .turno-display {
   display: flex;
   flex-direction: column;
@@ -18,44 +27,8 @@
 
 .texto-turno {
   font-size: 2rem;
+  font-family: '.sofia-sans', sans-serif;
   font-weight: bold;
   margin: 0;
   text-align: center;
-}
-
-#contenedor-botones {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: .5rem;
-}
-
-.boton {
-  border: none;
-  background: none;
-  background-color: gray;
-  color: white;
-  height: 100%;
-  font-size: medium;
-  text-transform: uppercase;
-  padding: .5rem;
-  margin: 0 .5rem;
-}
-
-#contenedor-turno-personalizado {
-  display: grid;
-  grid-template-areas: 
-  "h2 h2"
-  "input button";
-  grid-auto-columns: 1fr;
-
-  border: 1px black solid;
-}
-
-#turno_personalizado_element {
-  width: 50%;
-}
-
-#contenedor-turno-personalizado .boton {
-  width: 50%;
 }
