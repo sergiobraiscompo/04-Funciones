@@ -12,23 +12,43 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+  border: 1px solid #ddd;
+  border-radius: 10px;
 }
 
 .numero-turno {
-  font-size: 6rem;
+  font-size: 10rem;
   font-weight: bold;
   margin: 0;
 }
 
+#contenedor-botones {
+  display: flex;
+  justify-content: space-around;
+}
+
 .texto-turno {
-  font-size: 2rem;
   font-family: '.sofia-sans', sans-serif;
   font-weight: bold;
-  margin: 0;
+  font-size: 2rem;
   text-align: center;
+}
+
+.boton {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: center;
+  border: none;
+  background-color: rgb(192, 190, 190);
+}
+
+.boton img {
+  height: 100px;
+}
+
+.boton {
+  color: gray;
 }
