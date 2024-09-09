@@ -26,3 +26,6 @@ dist-ssr
 # Node files
 node_modules/*
 vite.config.ts
+
+# Other
+config/*
