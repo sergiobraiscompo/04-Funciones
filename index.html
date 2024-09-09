@@ -17,16 +17,16 @@
     <!-- Botonera -->
     <div id="contenedor-botones">
       <!-- Acciones simples -->
-      <button id="anterior" class="boton"><img src="./public/arrow back.svg" class="boton-interaccion" id="flecha-anterior" alt="Turno anterior">TURNO ANTERIOR</button>
-      <button id="reset" class="boton"><img src="./public/reset button.svg" class="boton-interaccion" id="flecha-anterior" alt="Reiniciar contador">REINICIAR CONTADOR</button>
-      <button id="siguiente" class="boton"><img src="./public/arrow forward.svg" class="boton-interaccion" id="flecha-anterior" alt="Turno siguiente">TURNO SIGUIENTE</button>
+      <button id="anterior" class="boton"><img src="./public/minus_sign.svg" class="boton-interaccion" id="turno-anterior" alt="Boton turno anterior">TURNO ANTERIOR</button>
+      <button id="reset" class="boton"><img src="./public/reset button.svg" class="boton-interaccion" id="reiniciar-contador" alt="Boton reiniciar contador">REINICIAR CONTADOR</button>
+      <button id="siguiente" class="boton"><img src="./public/plus_sign.svg" class="boton-interaccion" id="turno-siguiente" alt="Boton turno siguiente">TURNO SIGUIENTE</button>
     </div>
 
       <!-- Botón personalizado -->
-      <div id="contenedor-turno-personalizado">
-        <h2>Turno personalizado</h2><br>
+      <div id="contenedor-turno-personalizado" class="contenedor-turno-personalizado">
+        <h2>Turno personalizado</h2>
         <input type="text" id="turno_personalizado_element" name="turno_personalizado_element"><br>
-        <button type=sumbit id="personalizado" class="boton">Muestra turno</button>
+        <button type=sumbit id="personalizado" class="boton"><img src="./public/upload_turn.svg" alt="Botón muestra turno">Muestra turno</button>
       </div>
 
     <script type="module" src="/src/main.ts"></script>

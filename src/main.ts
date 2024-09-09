@@ -13,23 +13,23 @@ document.addEventListener("DOMContentLoaded", mostrar_numero);
 
 
 const handle_click = (boton: string) => {
-
     switch (boton) {
         case "siguiente": {
             if (turno != 99) {
-                turno++, mostrar_numero;
+                turno++;
                 break;
             } else {
-                    console.log("Máximo turnos alcanzado. Pulsa el botón de reset si quieres reiniciar el contador.");
-                    break;
+                console.log("Máximo turnos alcanzado. Pulsa el botón de reset si quieres reiniciar el contador.");
+                break;
             }
         }
 
         case "anterior": {
             if (turno === 0) {
                 console.log("El turno no puede ser menor que 0.");
+                break;
             } else {
-                turno--, mostrar_numero;
+                turno--;
                 break;
             }
         }
@@ -47,7 +47,7 @@ const handle_click = (boton: string) => {
         }
 
         case "reset": {
-                turno = 0, mostrar_numero;
+                turno = 0;
                 break;
         }
     }
