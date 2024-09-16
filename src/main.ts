@@ -12,13 +12,11 @@ const mostrarTurno = () => {
 const eventos = () => {
     // Botón número anterior
     const botonAnterior = document.getElementById("anterior");
-    botonAnterior?.addEventListener("click", () => anteriorTurno(turno));
+    botonAnterior?.addEventListener("click", () => {anteriorTurno(turno)});
     
     // Botón número siguiente
     const botonSiguiente = document.getElementById("siguiente");
     botonSiguiente?.addEventListener("click", () => siguienteTurno(turno));
-    
-    
     
     // Botón personalizado
     const botonPersonalizado = document.getElementById("personalizado");
@@ -35,26 +33,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 // Aumenta turno
-const aumentarTurno = (turno: number) => {
-    turno++;
-}
+const aumentarTurno = () => turno ++;
 
 const siguienteTurno = (turno: number) => {
-    aumentarTurno(turno);
-    mostrarTurno();
+    if (turno < 99) {
+        aumentarTurno();
+        mostrarTurno();
+    } else {
+        console.log("Máximo de turnos alcanzado. Pulsa el botón de reset para reiniciar el contador.");
+    }
 }
 
 
 // Disminuye turno
-const disminuirTurno = (turno: number) => {
-    turno--;
-}
+const disminuirTurno = () => turno--;
 
 const anteriorTurno = (turno: number) => {
-    disminuirTurno(turno);
-    mostrarTurno();
+    if (turno > 0) {
+        disminuirTurno();
+        mostrarTurno();
+    } else {
+        console.log("El turno no puede ser menor que 0.");
+    }
 }
 
 
@@ -65,18 +66,24 @@ const turnoPorDefecto = () => {
 }
 
 
-
 // Personaliza turno
-const personalizarTurno = () => {
-    const turnoInput = document.getElementById("turno_personalizado_element") as HTMLInputElement;
-    
-    if (turnoInput) {
-        turno = parseInt(turnoInput.value);
+const personalizarTurno = (turno: number) => {    
+    if (turno > 0 && turno <= 99) {
+        turno = turno;
+        mostrarTurno();
+    } else {
+        console.log("Número de turno no válido. Introduce un número entre 0 y 99 ambos inclusive.");
     }
 }
 
 const turnoPersonalizado = () => {
-    // Recibe número personalizado
-    personalizarTurno();
-    mostrarTurno();
+    const turnoInput = document.getElementById("turno_personalizado_element") as HTMLInputElement;
+
+    if (turnoInput != undefined && turnoInput != null && turnoInput) {
+        turno = parseInt(turnoInput.value);
+
+        personalizarTurno(turno);
+    } else {
+        console.log("Ha ocurrido un problema al procesar el turno introducido.")
+    }
 }
