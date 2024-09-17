@@ -33,25 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Aumenta turno
-const aumentarTurno = () => turno ++;
-
 const siguienteTurno = (turno: number) => {
     if (turno < 99) {
-        aumentarTurno();
+        turno++;
         mostrarTurno();
     } else {
         console.log("Máximo de turnos alcanzado. Pulsa el botón de reset para reiniciar el contador.");
     }
 }
 
-
-// Disminuye turno
-const disminuirTurno = () => turno--;
-
 const anteriorTurno = (turno: number) => {
     if (turno > 0) {
-        disminuirTurno();
+        turno --;
         mostrarTurno();
     } else {
         console.log("El turno no puede ser menor que 0.");
